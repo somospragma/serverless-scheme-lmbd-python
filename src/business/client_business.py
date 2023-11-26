@@ -24,7 +24,7 @@ class Clients:
     def validateBodyRequest(self, data, schema) -> None:
         validetor = ValidateRequest()
         validetor.json_schema_validator(data, schema)
-09
+
     def getCountries(self):
         try:
             url = "https://restcountries.com/v3.1/all"

@@ -20,6 +20,7 @@ var/
 .serverless
 .requirements
 .idea
+*.idea
 node_modules
 venv
 *.pyc

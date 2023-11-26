@@ -15,7 +15,7 @@ class Clients:
     def setContextPetition(self) -> None:
         self.__context.setStrategy()
 
-    def geBody(self):
+    def getBody(self):
         self.__context.chooseStrategy()
         return self.__context.getAction()
 

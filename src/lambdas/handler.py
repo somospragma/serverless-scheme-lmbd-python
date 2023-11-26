@@ -6,7 +6,7 @@ from src.utils.general.time import timeStamp
 def app(event, context):
     try:
         client = Clients(event)
-        getBody = client.geBody()
+        getBody = client.getBody()
 
         client.validateBodyRequest(getBody, TestRequest().get_schema())
 

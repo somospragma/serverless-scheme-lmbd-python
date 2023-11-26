@@ -1,6 +1,8 @@
 from src.patterns.strategy.bodyRequest.context.context import Context
 from src.validators.json_schema_validator import ValidateRequest
 from src.exception.default_exception import DefaultException
+from src.exception.invalid_url_exception import InvalidUrlException
+from src.exception.internal_error_exception import InternaErrorException
 import requests
 import os
 
@@ -22,7 +24,7 @@ class Clients:
     def validateBodyRequest(self, data, schema) -> None:
         validetor = ValidateRequest()
         validetor.json_schema_validator(data, schema)
-
+09
     def getCountries(self):
         try:
             url = "https://restcountries.com/v3.1/all"
@@ -39,9 +41,9 @@ class Clients:
 
         except requests.exceptions.HTTPError as http_err:
             if http_err.response.status_code == 404:
-                raise DefaultException(None, "NOT_FOUND_REQUEST", 404)
+                raise InvalidUrlException(None, "NOT_FOUND_REQUEST", 404)
             else:
-                raise DefaultException(None, "INTERNAL_ERROR_REQUEST", 501)
+                raise InternaErrorException(None, "INTERNAL_ERROR_REQUEST", 501)
 
         except requests.exceptions.RequestException as req_err:
             raise DefaultException(None, "INTERNAL_ERROR_REQUEST", 500)

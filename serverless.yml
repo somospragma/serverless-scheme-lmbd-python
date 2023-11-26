@@ -1,0 +1,22 @@
+service: lambda-python
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.9
+	
+plugins:
+  - serverless-python-requirements
+  - serverless-offline
+
+functions:
+  hello:
+    handler: src/lambdas/handler.app
+    maximumRetryAttempts: 1
+    environment:
+      typeRequest: post
+    events:
+      - http:
+          path: test
+          method: POST
+

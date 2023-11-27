@@ -3,7 +3,10 @@ from src.patterns.strategy.bodyRequest.strategyManager.strategy import Strategy
 from src.patterns.strategy.bodyRequest.impl.post import Post
 from src.patterns.strategy.bodyRequest.impl.get import Get
 from src.exception.default_exception import DefaultException
+from dataclasses import dataclass
 
+
+@dataclass
 class Context:
     __strategy: Strategy
     __strategyManager = StrategyManager()

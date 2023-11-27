@@ -10,6 +10,7 @@ class Strategy(ABC):
     @abstractmethod
     def getName(self):
         return self.__name
+
     @abstractmethod
     def getBody(self):
         pass

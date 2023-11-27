@@ -16,7 +16,6 @@ def app(event, context):
 
         return response
     except Exception as error:
-
         error_data = {
             'data': error.data if hasattr(error, 'data') else None,
             'statusCode': error.statusCode if hasattr(error, 'statusCode') else 500,

@@ -2,9 +2,9 @@ from src.patterns.strategy.bodyRequest.strategyManager.strategy import Strategy
 import json
 import base64
 
-class Post(Strategy):
 
-    __name = "post"
+class Post(Strategy):
+    __name: str = "post"
 
     def __init__(self, data):
         self.__data = data
@@ -29,4 +29,3 @@ class Post(Strategy):
             return json.loads(self.json_clear(body))
         else:
             return body
-
